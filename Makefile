@@ -1,9 +1,4 @@
-all: arcfour example
-example: example.o
-	gcc arcfour.so example.o -o example -Wall -02
-
-example.o: example.c
-	gcc -c -02 -Wall example.c
+all: arcfour
 
 arcfour: arcfour.o
 	gcc arcfour.o -o arcfour.so -20 -Wall -fPIC -shared -ldl -D_GNU_SOURCE
@@ -12,4 +7,4 @@ arcfour.o: arcfour.c
 	gcc -c -02 -Wall arcfour.c
 
 clean:
-	rm -f *.o *.so example
+	rm -f *.o *.so
